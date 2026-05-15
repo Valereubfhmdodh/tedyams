@@ -35,7 +35,7 @@ function ProductDetail({ products }) {
     }
 
     const phoneNumber = "22963923777"; // REMPLACEZ PAR VOTRE NUMÉRO (ex: 2250102030405)
-    const message = `Bonjour AMS SHOP, je souhaite commander ce modèle :\n\n*Produit :* ${product.name}\n*Pointure :* ${selectedSize}\n*Prix :* ${product.price.toLocaleString()} XOF\n*Image :* ${product.image}\n\nEst-ce disponible ?`;
+  const message = `Bonjour AMS SHOP, je souhaite commander ce modèle :\n\n*Produit :* ${product.name}\n*Pointure :* ${selectedSize}\n*Prix :* ${product.price.toLocaleString()} XOF\n\nEst-ce disponible ?`; 
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
