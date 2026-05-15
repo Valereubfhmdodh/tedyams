@@ -28,18 +28,17 @@ function ProductDetail({ products }) {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
-  const handleOrder = () => {
-    if (!selectedSize) {
-      alert("Veuillez sélectionner une pointure avant de passer commande.");
-      return;
-    }
+ const handleOrder = () => {
+  if (!selectedSize) {
+    alert("Veuillez sélectionner une pointure avant de passer commande.");
+    return;
+  }
 
-    const phoneNumber = "22963923777"; // REMPLACEZ PAR VOTRE NUMÉRO (ex: 2250102030405)
-  const message = `Bonjour AMS SHOP, je souhaite commander ce modèle :\n\n*Produit :* ${product.name}\n*Pointure :* ${selectedSize}\n*Prix :* ${product.price.toLocaleString()} XOF\n\nEst-ce disponible ?`; 
-
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
-  };
+  const phoneNumber = "22963923777"; // REMPLACEZ PAR VOTRE NUMÉRO (ex: 2250102030405)
+  const message = `Bonjour AMS SHOP, je souhaite commander ce modèle :\n\n*Produit :* ${product.name}\n*Pointure :* ${selectedSize}\n*Prix :* ${product.price.toLocaleString()} XOF\n\nEst-ce disponible ?`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(whatsappUrl, "_blank");
+};
 
   return (
     <div className="product-detail-page container animate-fade-in">
