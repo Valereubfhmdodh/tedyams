@@ -31,6 +31,18 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Synchroniser la visibilité de la navbar avec le body pour le style CSS
+  useEffect(() => {
+    if (visible) {
+      document.body.removeAttribute("data-navbar-hidden");
+    } else {
+      document.body.setAttribute("data-navbar-hidden", "true");
+    }
+    return () => {
+      document.body.removeAttribute("data-navbar-hidden");
+    };
+  }, [visible]);
+
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
